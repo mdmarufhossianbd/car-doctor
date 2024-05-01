@@ -11,6 +11,7 @@ const Navber = () => {
         <NavLink className="hover:underline" to={'/services'}>Services</NavLink>
         <NavLink className="hover:underline" to={'/blog'}>Blog</NavLink>
         <NavLink className="hover:underline" to={'/contact'}>Contact</NavLink>
+        <NavLink className="hover:underline" to={'/login'}>Login</NavLink>
 
     </>
 

@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "../src/Layout/Root";
-import About from "../src/Pages/About/About";
-import Blog from "../src/Pages/Blog/Blog";
-import Contact from "../src/Pages/Contact/Contact";
-import Home from "../src/Pages/Home/Home";
-import Services from "../src/Pages/Services/Services";
+import Root from "../Layout/Root";
+import About from "../Pages/About/About";
+import Blog from "../Pages/Blog/Blog";
+import Contact from "../Pages/Contact/Contact";
+import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
+import Services from "../Pages/Services/Services";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         {
             path: '/contact',
             element: <Contact></Contact>
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
         }
       ]
     },
