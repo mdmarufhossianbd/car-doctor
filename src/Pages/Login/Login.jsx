@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useContext } from 'react';
 import { FaFacebook, FaGoogle, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/Firebase.config';
 import { AuthContext } from '../../Provider/AuthProvider';
 import img from '../../assets/images/login/login.svg';
@@ -10,6 +10,8 @@ const Login = () => {
 
     const {signInUser} = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider;
+    const navigate = useNavigate();
+
 
     // sign in with email and password
 
@@ -22,6 +24,7 @@ const Login = () => {
         signInUser(email, password)
         .then(result=>{
             console.log(result.user);
+            navigate('/')
         })
         .catch(error=>{
             console.log(error.message);

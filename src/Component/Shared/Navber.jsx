@@ -1,17 +1,30 @@
+import { useContext } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { MdOutlineShoppingBag } from 'react-icons/md';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 import logo from '../../assets/logo.svg';
 const Navber = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+
     const links = <>
 
-        <NavLink className="hover:underline" to={'/'}>Home</NavLink>
-        <NavLink className="hover:underline" to={'/about'}>About</NavLink>
-        <NavLink className="hover:underline" to={'/services'}>Services</NavLink>
-        <NavLink className="hover:underline" to={'/blog'}>Blog</NavLink>
-        <NavLink className="hover:underline" to={'/contact'}>Contact</NavLink>
-        <NavLink className="hover:underline" to={'/login'}>Login</NavLink>
+        <Link className="hover:underline" to={'/'}>Home</Link>
+        <Link className="hover:underline" to={'/about'}>About</Link>
+        <Link className="hover:underline" to={'/services'}>Services</Link>
+        <Link className="hover:underline" to={'/blog'}>Blog</Link>
+        <Link className="hover:underline" to={'/contact'}>Contact</Link>
+        {
+            user ? <>
+             <Link className="hover:underline" to={'/mybookings'}>My Booking</Link>
+            <Link  onClick={logOut}><button className='hover:underline'>Sign out</button></Link>
+            </> :
+                <div className='flex gap-4'>
+                    <Link className="hover:underline" to={'/login'}>Sign In</Link>
+                    <Link className="hover:underline" to={'/register'}>Sign Up</Link>
+                </div>
+        }
 
     </>
 
