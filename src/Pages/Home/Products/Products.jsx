@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "../Services/ServiceCard";
 
-const Services = () => {
+const Products = () => {
 
     const [service, setService] = useState([])
 
@@ -15,11 +15,11 @@ const Services = () => {
     },[])
 
     return (
-        <div className="mb-10">
-            <div className='text-center my-20'>
-                <p className="text-[#FF3811] font-medium text-xl">Service</p>
-                <h2 className="font-bold text-5xl my-5">Our Service Area</h2>
-                <p className="w-1/2 mx-auto">the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
+        <div className="my-10">
+            <div className="w-[400px] mx-auto text-center mb-5">
+                <h2 className="text-[#FF3811] text-xl">Polular Products</h2>
+                <h2 className="text-3xl font-bold my-3">Browse Our Products</h2>
+                <p>The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
             </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 md:px-4">
                 {
@@ -32,4 +32,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Products;
