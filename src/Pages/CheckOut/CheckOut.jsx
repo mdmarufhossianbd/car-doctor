@@ -38,7 +38,7 @@ const CheckOut = () => {
             console.log(data);
         })
 
-    }
+    }   
 
     return (
         <div className='max-w-7xl mx-auto my-20 '>
